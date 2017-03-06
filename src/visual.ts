@@ -177,12 +177,12 @@ module powerbi.extensibility.visual {
                     : colors.getColor(originParentNode.value.toString()).value;
             }
 
+            newSunNode.children = [];
             data.total += newSunNode.value;
             if (originParentNode.children && originParentNode.children.length > 0) {
 
                 newSunNode.tooltipInfo = Sunburst.getTooltipData(originParentNode.value, -1);
 
-                newSunNode.children = [];
                 for (let i: number = 0, iLen: number = originParentNode.children.length; i < iLen; i++) {
                     let newChild = Sunburst.covertTreeNodeToSunBurstNode(
                         dataView,
